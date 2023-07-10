@@ -16,7 +16,7 @@ export default {
 				<HeaderJumbo />
 			</div>
 			<AppOwlDots
-				:starting-position="3"
+				:starting-position="2"
 				type="hollow" />
 		</div>
 	</header>

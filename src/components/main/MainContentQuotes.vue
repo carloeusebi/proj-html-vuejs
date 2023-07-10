@@ -5,21 +5,35 @@ import { quotes } from '@/assets/data';
 export default {
 	components: { AppOwlDots },
 	data() {
-		return { quotes, currentQuote: 1 };
+		return { quotes, currentQuote: 0, timer: null };
 	},
 	computed: {
 		current() {
 			return quotes[this.currentQuote];
 		},
-		src() {
-			const url = new URL(`../../assets/img/${this.current.img}`, import.meta.url);
-			return url.href;
-		},
 	},
 	methods: {
 		changeSelection(selected) {
+			const offset = -100 * selected;
 			this.currentQuote = selected;
+			this.$refs.quote.forEach(q => {
+				q.style.transform = `translateX(${offset}%)`;
+			});
 		},
+		src(img) {
+			const url = new URL(`../../assets/img/${img}`, import.meta.url);
+			return url.href;
+		},
+		startCountdown() {
+			clearInterval(this.timer);
+			this.timer = setInterval(() => {
+				const next = this.currentQuote === this.quotes.length - 1 ? 0 : ++this.currentQuote;
+				this.changeSelection(next);
+			}, 5000);
+		},
+	},
+	mounted() {
+		this.startCountdown();
 	},
 };
 </script>
@@ -27,19 +41,31 @@ export default {
 <template>
 	<section id="quotes">
 		<div class="container">
-			<img
-				:src="src"
-				alt="" />
-			<p>"{{ current.quote }}"</p>
-			<p class="author">{{ current.author }}</p>
-			<p class="occupation">{{ current.occupation }}</p>
-			<AppOwlDots @change-selection="changeSelection" />
+			<div
+				v-for="(quote, i) in quotes"
+				ref="quote"
+				class="quote">
+				<img
+					:src="src(quote.img)"
+					alt="" />
+				<p>"{{ quote.quote }}"</p>
+				<p class="author">{{ quote.author }}</p>
+				<p class="occupation">{{ quote.occupation }}</p>
+			</div>
 		</div>
+		<AppOwlDots
+			v-model="currentQuote"
+			@change-selection="changeSelection" />
 	</section>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/sass' as *;
+
+.container {
+	display: flex;
+	overflow-x: hidden;
+}
 
 #quotes {
 	background-image: url('@/assets/img/h5-parallax-img-1.png');
@@ -50,6 +76,12 @@ export default {
 
 img {
 	margin: 0 auto 2rem;
+}
+
+.quote {
+	min-width: 100%;
+	transition: transform 400ms ease-in-out;
+	padding: 0 8rem;
 }
 
 .author {

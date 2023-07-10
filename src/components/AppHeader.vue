@@ -15,7 +15,9 @@ export default {
 			<div class="flex">
 				<HeaderJumbo />
 			</div>
-			<AppOwlDots />
+			<AppOwlDots
+				:active="3"
+				type="hollow" />
 		</div>
 	</header>
 </template>

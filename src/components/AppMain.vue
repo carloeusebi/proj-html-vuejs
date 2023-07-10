@@ -1,7 +1,14 @@
 <script>
-export default {};
+import MainContent from './main/MainContent.vue';
+export default { components: { MainContent } };
 </script>
 
-<template>the main</template>
+<template>
+	<!-- MAIN CONTENT -->
+	<MainContent />
+	<!-- LEARNING -->
+	<!-- COURSES -->
+	<!-- PRICING -->
+</template>
 
 <style scoped></style>

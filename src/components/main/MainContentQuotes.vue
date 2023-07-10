@@ -25,11 +25,17 @@ export default {
 			return url.href;
 		},
 		startCountdown() {
-			clearInterval(this.timer);
-			this.timer = setInterval(() => {
+			this.timer = setTimeout(() => {
 				const next = this.currentQuote === this.quotes.length - 1 ? 0 : ++this.currentQuote;
 				this.changeSelection(next);
 			}, 5000);
+		},
+	},
+	watch: {
+		currentQuote(newValue) {
+			clearTimeout(this.timer);
+			this.changeSelection(newValue);
+			this.startCountdown();
 		},
 	},
 	mounted() {
@@ -53,9 +59,7 @@ export default {
 				<p class="occupation">{{ quote.occupation }}</p>
 			</div>
 		</div>
-		<AppOwlDots
-			v-model="currentQuote"
-			@change-selection="changeSelection" />
+		<AppOwlDots v-model="currentQuote" />
 	</section>
 </template>
 

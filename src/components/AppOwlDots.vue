@@ -1,26 +1,15 @@
 <script>
 export default {
 	props: {
-		startingPosition: {
-			type: Number,
-			default: 1,
-		},
+		modelValue: Number,
 		type: {
 			type: String,
 			default: 'default',
 			validator: type => ['hollow', 'default', 'blue'].includes(type),
 		},
 	},
-	data() {
-		return { active: this.startingPosition };
-	},
-	methods: {
-		selectThis(active) {
-			this.active = active;
-			this.$emit('change-selection', active);
-		},
-	},
-	emits: ['change-selection'],
+
+	emits: ['update:modelValue'],
 };
 </script>
 
@@ -29,8 +18,8 @@ export default {
 		<div
 			class="dot"
 			v-for="(n, i) in 3"
-			:class="[type, { active: i === active }]"
-			@click="selectThis(i)"></div>
+			:class="[type, { active: i === modelValue }]"
+			@click="$emit('update:modelValue', i)"></div>
 	</div>
 </template>
 

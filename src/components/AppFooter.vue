@@ -2,6 +2,14 @@
 export default {};
 </script>
 
-<template>the footer</template>
+<template>
+	<footer>HI! I'M THE FOOTER!</footer>
+</template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
+
+footer {
+	background-color: $background-gray;
+}
+</style>

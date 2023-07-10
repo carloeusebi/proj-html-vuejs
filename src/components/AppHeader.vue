@@ -10,11 +10,13 @@ export default {
 
 <template>
 	<header>
-		<HeaderNavbar />
-		<div class="flex container">
-			<HeaderJumbo />
+		<div class="container">
+			<HeaderNavbar />
+			<div class="flex">
+				<HeaderJumbo />
+			</div>
+			<AppOwlDots />
 		</div>
-		<AppOwlDots />
 	</header>
 </template>
 
@@ -25,11 +27,14 @@ header {
 	background-size: cover;
 	height: 100vh;
 
+	color: white;
+	padding: 2rem 5rem;
+}
+.container {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-
-	color: white;
 }
 </style>

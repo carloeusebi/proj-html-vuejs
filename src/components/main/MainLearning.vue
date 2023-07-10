@@ -7,6 +7,7 @@ export default {
 			learningList,
 			descriptions,
 			active: learningList[0].id,
+			hasChanged: false,
 		};
 	},
 	computed: {
@@ -15,6 +16,15 @@ export default {
 		},
 		imgSrc() {
 			return new URL(`../../assets/img/${this.activeDescription.img}`, import.meta.url).href;
+		},
+	},
+	watch: {
+		// hasChanged triggers animation
+		active() {
+			this.hasChanged = true;
+			setTimeout(() => {
+				this.hasChanged = false;
+			}, 200);
 		},
 	},
 };
@@ -36,7 +46,9 @@ export default {
 						</li>
 					</ul>
 				</div>
-				<div class="right-column">
+				<div
+					class="right-column"
+					:class="{ changed: hasChanged }">
 					<h2>{{ activeDescription.title }}</h2>
 					<p>{{ activeDescription.paragraph }}</p>
 					<ul>
@@ -72,7 +84,7 @@ section {
 }
 
 * {
-	color: $text-light-gray;
+	color: $text-dark-gray;
 }
 
 h2 {
@@ -112,8 +124,24 @@ figure {
 	}
 }
 
+.changed.right-column {
+	opacity: 0;
+	animation: solve-into-view 150ms linear 1 forwards;
+}
+
 .fa-check {
 	color: $background-blue;
 	margin-right: 0.5rem;
+}
+
+@keyframes solve-into-view {
+	from {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 </style>

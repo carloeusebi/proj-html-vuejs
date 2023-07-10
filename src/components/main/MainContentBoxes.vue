@@ -1,16 +1,55 @@
 <script>
-export default {};
+export default {
+	props: {
+		img: {
+			type: String,
+			required: true,
+		},
+		label: {
+			type: String,
+			require: true,
+		},
+	},
+	computed: {
+		src() {
+			const url = new URL(`../../assets/img/${this.img}`, import.meta.url);
+			console.log(url.href);
+			return url.href;
+		},
+	},
+};
 </script>
 
 <template>
-	<div class="container">
-		<div v-for="n in 6">BOX</div>
+	<div class="box">
+		<img
+			:src="src"
+			:alt="label" />
+		<h4>{{ label }}</h4>
 	</div>
 </template>
 
-<style scoped>
-.container {
-	display: flex;
-	justify-content: center;
+<style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
+@use '@/assets/sass' as *;
+
+.box {
+	background-color: $background-box;
+	text-align: center;
+	padding: 3rem;
+	cursor: pointer;
+
+	img {
+		transition: transform 300ms;
+	}
+
+	&:hover img {
+		transform: translateY(-7px);
+	}
+}
+
+h4 {
+	font-family: $font-primary;
+	margin-top: 3rem;
 }
 </style>

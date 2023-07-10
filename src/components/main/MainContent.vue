@@ -4,9 +4,32 @@ import MainContentTutoring from './MainContentTutoring.vue';
 import MainContentPotential from './MainContentPotential.vue';
 import MainContentQuotes from './MainContentQuotes.vue';
 
-export default { components: { MainContentBoxes, MainContentTutoring, MainContentPotential, MainContentQuotes } };
+import { boxes } from '@/assets/data';
+
+export default {
+	components: { MainContentBoxes, MainContentTutoring, MainContentPotential, MainContentQuotes },
+	data() {
+		return { boxes };
+	},
+};
 </script>
 
-<template><MainContentBoxes /><MainContentTutoring /><MainContentPotential /><MainContentQuotes /></template>
+<template>
+	<div class="boxes container">
+		<MainContentBoxes
+			v-for="(box, i) in boxes.labels"
+			:label="box"
+			:img="`${boxes.baseUrl}${i + 1}.png`" />
+	</div>
+	<MainContentTutoring /><MainContentPotential /><MainContentQuotes />
+</template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.boxes.container {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 1.5rem;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+</style>

@@ -5,17 +5,21 @@ import { quotes } from '@/assets/data';
 export default {
 	components: { AppOwlDots },
 	data() {
-		return { quotes, currentQuote: 0, timer: null };
+		return { quotes, active: 0, timer: null };
 	},
 	computed: {
 		current() {
-			return quotes[this.currentQuote];
+			return quotes[this.active];
 		},
 	},
 	methods: {
+		/**
+		 * The offset regulates which image is displayed on the center
+		 * @param {number} selected
+		 */
 		changeSelection(selected) {
 			const offset = -100 * selected;
-			this.currentQuote = selected;
+			this.active = selected;
 			this.$refs.quote.forEach(q => {
 				q.style.transform = `translateX(${offset}%)`;
 			});
@@ -24,29 +28,37 @@ export default {
 			const url = new URL(`../../assets/img/${img}`, import.meta.url);
 			return url.href;
 		},
-		startCountdown() {
+		startTimeout() {
 			this.timer = setTimeout(() => {
-				const next = this.currentQuote === this.quotes.length - 1 ? 0 : ++this.currentQuote;
+				const next = this.active === this.quotes.length - 1 ? 0 : ++this.active;
 				this.changeSelection(next);
-			}, 5000);
+			}, 7500);
+		},
+		// clears timeout when mouse enters over the text
+		handleMouseEnter() {
+			clearTimeout(this.timer);
 		},
 	},
 	watch: {
-		currentQuote(newValue) {
+		// watching active allows to clear the timeout when active changes because of user input
+		active(newValue) {
 			clearTimeout(this.timer);
 			this.changeSelection(newValue);
-			this.startCountdown();
+			this.startTimeout();
 		},
 	},
 	mounted() {
-		this.startCountdown();
+		this.startTimeout();
 	},
 };
 </script>
 
 <template>
 	<section id="quotes">
-		<div class="container">
+		<div
+			class="container"
+			@mouseenter="handleMouseEnter"
+			@mouseleave="startTimeout">
 			<div
 				v-for="(quote, i) in quotes"
 				ref="quote"
@@ -59,7 +71,9 @@ export default {
 				<p class="occupation">{{ quote.occupation }}</p>
 			</div>
 		</div>
-		<AppOwlDots v-model="currentQuote" />
+		<AppOwlDots
+			v-model="active"
+			:number-of-dots="quotes.length" />
 	</section>
 </template>
 

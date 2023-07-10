@@ -6,13 +6,28 @@ export default {
 		title: String,
 		subtitle: String,
 	},
+	data() {
+		return {
+			hasChanged: true,
+		};
+	},
 	components: { AppButton },
+	// watch title, when title changes it resets changed class triggering the animation
+	watch: {
+		title() {
+			this.hasChanged = false;
+			setTimeout(() => {
+				this.hasChanged = true;
+			}, 200);
+		},
+	},
 };
 </script>
 
 <template>
 	<div
 		id="jumbotron"
+		:class="{ changed: hasChanged }"
 		class="text-center">
 		<h1>{{ title }}</h1>
 		<p>

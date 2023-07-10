@@ -6,63 +6,64 @@ import AppOwlDots from './AppOwlDots.vue';
 
 export default {
 	data() {
-		return { jumbo, active: 0, timer: null, hasChanged: true };
+		return { jumbo, active: 0, timer: null };
 	},
 	computed: {
 		backgroundImage() {
 			const url = new URL(`../assets/img/${jumbo[this.active].img}`, import.meta.url);
 			return url.href;
 		},
+		// max value is the number of different jumbos we have
 		maxValue() {
 			return this.jumbo.length - 1;
 		},
+		nextValue() {
+			return this.active === this.maxValue ? 0 : ++this.active;
+		},
+		prevValue() {
+			return this.active === 0 ? this.maxValue : --this.active;
+		},
 	},
 	methods: {
+		/**
+		 * Starts a countdown of 10 seconds
+		 */
 		startCountdown() {
 			this.timer = setTimeout(() => {
-				this.hasChanged = false;
-				this.active = this.active === this.maxValue ? 0 : ++this.active;
+				this.active = this.nextValue;
 			}, 10000);
 		},
-		handlePrevClick() {
-			this.active = this.active === 0 ? this.maxValue : --this.active;
-		},
-		handleNextClick() {
-			this.active = this.active === this.maxValue ? 0 : ++this.active;
-		},
 	},
+	// watch active variables, when it changes it clears timeout. It is needed to stop timeout when active changes because of user input
 	watch: {
 		active() {
-			this.hasChanged = false;
-			setTimeout(() => {
-				this.hasChanged = true;
-			}, 200);
 			clearTimeout(this.timer);
 			this.startCountdown();
 		},
 	},
 	components: { HeaderJumbo, HeaderNavbar, AppOwlDots },
 	mounted() {
+		// at mounted it starts the countdown
 		this.startCountdown();
 	},
 };
 </script>
 
 <template>
+	<!-- Inline style changes the background -->
 	<header :style="`background-image: url(${backgroundImage})`">
 		<!-- NEXT & PREV ARROWS -->
 		<font-awesome-icon
 			:icon="['fas', 'angle-left']"
-			@click="handlePrevClick" />
+			@click="active = prevValue" />
 		<font-awesome-icon
 			:icon="['fas', 'angle-right']"
-			@click="handleNextClick" />
+			@click="active = nextValue" />
 
 		<div class="container">
 			<HeaderNavbar />
 			<div class="flex">
 				<HeaderJumbo
-					:class="{ changed: hasChanged }"
 					:title="jumbo[active].title"
 					:subtitle="jumbo[active].subtitle" />
 			</div>
@@ -77,7 +78,6 @@ export default {
 @use '@/assets/sass/colors' as *;
 
 header {
-	/* background-image: url('../assets/img/h5-slide-3-background.jpg'); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;

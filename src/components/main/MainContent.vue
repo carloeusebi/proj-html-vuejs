@@ -21,7 +21,9 @@ export default {
 			:label="box"
 			:img="`${boxes.baseUrl}${i + 1}.png`" />
 	</div>
-	<MainContentTutoring /><MainContentPotential /><MainContentQuotes />
+	<MainContentTutoring />
+	<MainContentPotential />
+	<MainContentQuotes />
 </template>
 
 <style lang="scss" scoped>

@@ -3,7 +3,33 @@ export default {};
 </script>
 
 <template>
-	<h2>The trusted name for in-home tutoring</h2>
+	<section id="tutoring">
+		<div class="container">
+			<h2>The trusted name <br />for in-home tutoring.</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem iusto aspernatur dolores nobis nihil eius qui
+				hic. Doloremque dolorem, et dolore quaerat asperiores a corrupti! Repellendus expedita culpa quisquam voluptate.
+			</p>
+			<p class="blue-text">Learn more</p>
+			<img
+				src="@/assets/img/h5-img-1.jpg"
+				alt="Home Tutoring" />
+		</div>
+	</section>
 </template>
 
-<style scoped></style>
+<style scoped>
+#tutoring {
+	border-bottom: 2px solid #eee;
+}
+.blue-text {
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 3px;
+	margin-bottom: 0;
+}
+
+img {
+	width: 100%;
+}
+</style>

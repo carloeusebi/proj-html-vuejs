@@ -9,6 +9,14 @@ export default {
 			active: learningList[0].id,
 		};
 	},
+	computed: {
+		activeDescription() {
+			return descriptions.find(({ id }) => id === this.active);
+		},
+		imgSrc() {
+			return new URL(`../../assets/img/${this.activeDescription.img}`, import.meta.url).href;
+		},
+	},
 };
 </script>
 
@@ -29,7 +37,21 @@ export default {
 					</ul>
 				</div>
 				<div class="right-column">
-					<h2>Learning Possibilities</h2>
+					<h2>{{ activeDescription.title }}</h2>
+					<p>{{ activeDescription.paragraph }}</p>
+					<ul>
+						<li
+							v-for="point in activeDescription.bulletPoints"
+							:key="point">
+							<font-awesome-icon :icon="['fas', 'check']" />
+							{{ point }}
+						</li>
+					</ul>
+					<figure>
+						<img
+							:src="imgSrc"
+							:alt="activeDescription.title" />
+					</figure>
 				</div>
 			</div>
 		</div>
@@ -57,7 +79,14 @@ h2 {
 	color: black;
 }
 
-li {
+figure {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 175px;
+}
+
+.left-column li {
 	font-family: $font-primary;
 	font-weight: 600;
 	padding: 1.5rem;
@@ -72,5 +101,19 @@ li {
 		color: $background-blue;
 		border-left: 7px solid $background-blue;
 	}
+}
+
+.right-column {
+	position: relative;
+
+	li {
+		font-size: 1.1rem;
+		padding: 1rem 0;
+	}
+}
+
+.fa-check {
+	color: $background-blue;
+	margin-right: 0.5rem;
 }
 </style>

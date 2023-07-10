@@ -13,13 +13,22 @@ export default {
 			const url = new URL(`../assets/img/${jumbo[this.active].img}`, import.meta.url);
 			return url.href;
 		},
+		maxValue() {
+			return this.jumbo.length - 1;
+		},
 	},
 	methods: {
 		startCountdown() {
 			this.timer = setTimeout(() => {
 				this.hasChanged = false;
-				this.active = this.active === this.jumbo.length - 1 ? 0 : ++this.active;
-			}, 5000);
+				this.active = this.active === this.maxValue ? 0 : ++this.active;
+			}, 10000);
+		},
+		handlePrevClick() {
+			this.active = this.active === 0 ? this.maxValue : --this.active;
+		},
+		handleNextClick() {
+			this.active = this.active === this.maxValue ? 0 : ++this.active;
 		},
 	},
 	watch: {
@@ -41,6 +50,14 @@ export default {
 
 <template>
 	<header :style="`background-image: url(${backgroundImage})`">
+		<!-- NEXT & PREV ARROWS -->
+		<font-awesome-icon
+			:icon="['fas', 'angle-left']"
+			@click="handlePrevClick" />
+		<font-awesome-icon
+			:icon="['fas', 'angle-right']"
+			@click="handleNextClick" />
+
 		<div class="container">
 			<HeaderNavbar />
 			<div class="flex">
@@ -56,12 +73,15 @@ export default {
 	</header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
+
 header {
 	/* background-image: url('../assets/img/h5-slide-3-background.jpg'); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
+	position: relative;
 
 	color: white;
 	padding: 2rem 5rem;
@@ -72,5 +92,27 @@ header {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+}
+
+svg {
+	position: absolute;
+	top: 50%;
+	font-size: 6rem;
+	transform: translateY(-50%);
+	color: $text-light-gray;
+	transition: color 300ms;
+	cursor: pointer;
+
+	&:hover {
+		color: white;
+	}
+
+	&.fa-angle-left {
+		left: 1rem;
+	}
+
+	&.fa-angle-right {
+		right: 1rem;
+	}
 }
 </style>

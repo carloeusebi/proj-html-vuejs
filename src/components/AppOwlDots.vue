@@ -17,8 +17,10 @@ export default {
 	methods: {
 		selectThis(active) {
 			this.active = active;
+			this.$emit('change-selection', active);
 		},
 	},
+	emits: ['change-selection'],
 };
 </script>
 
@@ -26,9 +28,9 @@ export default {
 	<div class="owl-dots">
 		<div
 			class="dot"
-			v-for="n in 3"
-			:class="[type, { active: n === active }]"
-			@click="selectThis(n)"></div>
+			v-for="(n, i) in 3"
+			:class="[type, { active: i === active }]"
+			@click="selectThis(i)"></div>
 	</div>
 </template>
 

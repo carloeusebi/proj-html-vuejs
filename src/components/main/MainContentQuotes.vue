@@ -16,6 +16,11 @@ export default {
 			return url.href;
 		},
 	},
+	methods: {
+		changeSelection(selected) {
+			this.currentQuote = selected;
+		},
+	},
 };
 </script>
 
@@ -28,7 +33,7 @@ export default {
 			<p>"{{ current.quote }}"</p>
 			<p class="author">{{ current.author }}</p>
 			<p class="occupation">{{ current.occupation }}</p>
-			<AppOwlDots />
+			<AppOwlDots @change-selection="changeSelection" />
 		</div>
 	</section>
 </template>

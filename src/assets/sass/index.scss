@@ -21,6 +21,11 @@ a {
 	text-decoration: none;
 }
 
+img {
+	max-width: 100%;
+	display: block;
+}
+
 h1 {
 	font-size: 72px;
 	font-weight: bolder;
@@ -32,6 +37,11 @@ h2 {
 	text-transform: capitalize;
 	font-family: $font-primary;
 	font-size: 48px;
+	margin-bottom: 2rem;
+}
+
+p {
+	font-size: 1.2rem;
 }
 
 .blue-text {

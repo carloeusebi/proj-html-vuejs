@@ -7,6 +7,10 @@ export default {
 			default: 'default',
 			validator: type => ['hollow', 'default', 'blue'].includes(type),
 		},
+		numberOfDots: {
+			type: Number,
+			required: true,
+		},
 	},
 
 	emits: ['update:modelValue'],
@@ -17,7 +21,7 @@ export default {
 	<div class="owl-dots">
 		<div
 			class="dot"
-			v-for="(n, i) in 3"
+			v-for="(n, i) in numberOfDots"
 			:class="[type, { active: i === modelValue }]"
 			@click="$emit('update:modelValue', i)"></div>
 	</div>

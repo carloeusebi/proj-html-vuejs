@@ -51,16 +51,20 @@ p {
 }
 
 .changed {
+	* {
+		animation: fade-in 500ms ease-in-out 1 forwards;
+	}
+
 	h1 {
-		animation: fade-in 500ms ease-in-out 300ms 1 forwards;
+		animation-delay: 300ms;
 	}
 
 	p {
-		animation: fade-in 500ms ease-in-out 600ms 1 forwards;
+		animation-delay: 600ms;
 	}
 
 	.button {
-		animation: fade-in 500ms ease-in-out 900ms 1 forwards;
+		animation-delay: 900ms;
 	}
 }
 

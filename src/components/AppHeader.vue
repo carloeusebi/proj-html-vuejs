@@ -18,17 +18,17 @@ export default {
 			return this.jumbo.length - 1;
 		},
 		nextValue() {
-			return this.active === this.maxValue ? 0 : ++this.active;
+			return this.active === this.maxValue ? 0 : this.active + 1;
 		},
 		prevValue() {
-			return this.active === 0 ? this.maxValue : --this.active;
+			return this.active === 0 ? this.maxValue : this.active - 1;
 		},
 	},
 	methods: {
 		/**
 		 * Starts a countdown of 10 seconds
 		 */
-		startCountdown() {
+		startTimeout() {
 			this.timer = setTimeout(() => {
 				this.active = this.nextValue;
 			}, 10000);
@@ -38,13 +38,13 @@ export default {
 	watch: {
 		active() {
 			clearTimeout(this.timer);
-			this.startCountdown();
+			this.startTimeout();
 		},
 	},
 	components: { HeaderJumbo, HeaderNavbar, AppOwlDots },
 	mounted() {
 		// at mounted it starts the countdown
-		this.startCountdown();
+		this.startTimeout();
 	},
 };
 </script>
@@ -68,6 +68,7 @@ export default {
 					:subtitle="jumbo[active].subtitle" />
 			</div>
 			<AppOwlDots
+				:number-of-dots="jumbo.length"
 				v-model="active"
 				type="hollow" />
 		</div>

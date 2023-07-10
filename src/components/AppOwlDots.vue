@@ -35,10 +35,11 @@ export default {
 <style lang="scss" scoped>
 .owl-dots {
 	display: flex;
+	justify-content: center;
 }
 .dot {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	border-radius: 50%;
 	margin: 0.5rem;
 

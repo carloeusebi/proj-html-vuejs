@@ -1,5 +1,16 @@
 @use './colors' as *;
+// Import all of Bootstrap's CSS
+@import 'bootstrap/scss/bootstrap';
 
 body {
 	font-family: 'Merriweather';
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+ul {
+	list-style: none;
 }

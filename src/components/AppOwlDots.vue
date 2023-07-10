@@ -1,7 +1,7 @@
 <script>
 export default {
 	props: {
-		active: {
+		startingPosition: {
 			type: Number,
 			default: 1,
 		},
@@ -9,6 +9,14 @@ export default {
 			type: String,
 			default: 'default',
 			validator: type => ['hollow', 'default', 'blue'].includes(type),
+		},
+	},
+	data() {
+		return { active: this.startingPosition };
+	},
+	methods: {
+		selectThis(active) {
+			this.active = active;
 		},
 	},
 };
@@ -19,7 +27,8 @@ export default {
 		<div
 			class="dot"
 			v-for="n in 3"
-			:class="[type, { active: n === 3 }]"></div>
+			:class="[type, { active: n === active }]"
+			@click="selectThis(n)"></div>
 	</div>
 </template>
 

@@ -13,7 +13,6 @@ export default {
 	computed: {
 		src() {
 			const url = new URL(`../../assets/img/${this.img}`, import.meta.url);
-			console.log(url.href);
 			return url.href;
 		},
 	},

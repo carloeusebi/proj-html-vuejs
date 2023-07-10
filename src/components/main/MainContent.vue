@@ -29,7 +29,7 @@ export default {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 1.5rem;
-	margin-top: 5rem;
-	margin-bottom: 5rem;
+	margin-top: 7rem;
+	margin-bottom: 7rem;
 }
 </style>

@@ -4,8 +4,9 @@ import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppSideButton from './components/AppSideButton.vue';
 
+import AppToTop from './components/AppToTop.vue';
 export default {
-	components: { AppHeader, AppMain, AppFooter, AppSideButton },
+	components: { AppHeader, AppMain, AppFooter, AppSideButton, AppToTop },
 };
 </script>
 
@@ -27,4 +28,6 @@ export default {
 		img="svg/svg-2.svg"
 		:bottom="190"
 		text="buy now" />
+
+	<AppToTop />
 </template>

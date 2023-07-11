@@ -16,6 +16,7 @@ import {
 	faTag,
 	faXmark,
 	faPhoneVolume,
+	faAngleUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faClock } from '@fortawesome/free-regular-svg-icons';
@@ -31,6 +32,7 @@ library.add(
 	faTag,
 	faXmark,
 	faPhoneVolume,
+	faAngleUp,
 	faClock,
 	faHeart,
 	faTwitter,

@@ -16,9 +16,8 @@ import {
 	faTag,
 	faXmark,
 	faPhoneVolume,
-	faClock,
 } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart, faClock } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
 	faBagShopping,

@@ -11,8 +11,22 @@ export default { components: { AppLogo } };
 					<div class="col">
 						<AppLogo />
 						<p>Providing Life Changing Experiences Through Education. Class That Fit Your Busy Life. Closer to Home</p>
-						<div class="links"><a href="tel:1-677-124-44227">1-677-124-44227</a></div>
-						<div class="links"><a href="#">Mon - Sat 8.00 - 18.00</a></div>
+						<div class="links">
+							<a href="tel:1-677-124-44227">
+								<font-awesome-icon
+									:icon="['fas', 'phone-volume']"
+									class="me-2" />
+								1-677-124-44227</a
+							>
+						</div>
+						<div class="links">
+							<a href="#">
+								<font-awesome-icon
+									:icon="['far', 'clock']"
+									class="me-2" />
+								Mon - Sat 8.00 - 18.00</a
+							>
+						</div>
 					</div>
 					<div class="col">
 						<h3>Popular Courses</h3>
@@ -71,6 +85,14 @@ footer {
 		font-size: 0.85rem;
 		padding: 0.5rem 0;
 		color: white;
+
+		svg {
+			transition: color 300ms;
+		}
+
+		&:hover svg {
+			color: $background-blue;
+		}
 	}
 }
 
@@ -107,7 +129,7 @@ ul {
 	}
 	* {
 		cursor: pointer;
-		transition: color 200ms;
+		transition: color 300ms;
 	}
 
 	h4:hover {

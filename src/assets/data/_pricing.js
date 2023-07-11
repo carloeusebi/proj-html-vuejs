@@ -5,7 +5,7 @@ export const plans = [
 		price: 12,
 		numOfCourses: 2,
 		days: 15,
-		perks: ['web-designing', 'human-centered design'],
+		perks: ['web designing', 'human-centered design'],
 	},
 	{
 		img: 'h5-custom-icon-8.png',
@@ -13,7 +13,7 @@ export const plans = [
 		price: 59,
 		numOfCourses: 4,
 		days: 30,
-		perks: ['web-designing', 'human-centered design', 'basic marketing', 'python for everybody'],
+		perks: ['web designing', 'human-centered design', 'basic marketing', 'python for everybody'],
 	},
 	{
 		img: 'h5-custom-icon-9.png',
@@ -22,7 +22,7 @@ export const plans = [
 		numOfCourses: 6,
 		days: 60,
 		perks: [
-			'web-designing',
+			'web designing',
 			'human-centered design',
 			'basic marketing',
 			'python for everybody',
@@ -33,8 +33,6 @@ export const plans = [
 ];
 
 export const perks = [
-	'number of courses',
-	'time',
 	'web designing',
 	'human-centered design',
 	'basic marketing',

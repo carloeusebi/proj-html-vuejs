@@ -52,14 +52,14 @@ export default {
 <style lang="scss" scoped>
 section {
 	padding: 8rem 0;
+	border-bottom: 1px solid #eee;
 }
 
 .cards-container {
 	display: flex;
 	flex-wrap: nowrap;
-	margin-bottom: 5rem;
 	overflow-x: hidden;
-	padding: 6rem 0;
+	padding: 6rem 0 2rem;
 
 	.card-container {
 		flex: 0 0 calc(100% / 3);

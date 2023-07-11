@@ -28,7 +28,7 @@ export default {
 	<div
 		id="jumbotron"
 		:class="{ changed: hasChanged }"
-		class="text-center">
+		class="text-center user-select-none">
 		<h1>{{ title }}</h1>
 		<p>
 			{{ subtitle }}

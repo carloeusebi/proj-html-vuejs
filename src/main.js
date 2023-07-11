@@ -17,6 +17,7 @@ import {
 	faXmark,
 	faPhoneVolume,
 } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faClock } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -31,7 +32,10 @@ library.add(
 	faXmark,
 	faPhoneVolume,
 	faClock,
-	faHeart
+	faHeart,
+	faTwitter,
+	faFacebook,
+	faInstagram
 );
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');

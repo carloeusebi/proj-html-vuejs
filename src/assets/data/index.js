@@ -5,5 +5,6 @@ import { navbarLinks } from './_navbar';
 import { plans, perks } from './_pricing';
 import { quotes } from './_quotes';
 import { jumbo } from './_jumbo';
+import { clients } from './_clients';
 
-export { boxes, courses, learningList, navbarLinks, plans, perks, quotes, jumbo, descriptions };
+export { boxes, courses, learningList, navbarLinks, plans, perks, quotes, jumbo, descriptions, clients };

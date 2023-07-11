@@ -4,7 +4,7 @@ import { navbarLinks } from '@/assets/data';
 import AppLogo from '../AppLogo.vue';
 export default {
 	data() {
-		return { navbarLinks };
+		return { navbarLinks, itemsInCart: 0 };
 	},
 	components: { AppLogo },
 };
@@ -22,16 +22,20 @@ export default {
 			:icon="['fas', 'magnifying-glass']"
 			size="lg"
 			flip="horizontal" />
-		<font-awesome-icon
-			:icon="['fas', 'bag-shopping']"
-			size="lg" />
+		<div class="position-relative">
+			<font-awesome-icon
+				:icon="['fas', 'bag-shopping']"
+				size="lg" />
+			<span class="items-in-cart">{{ itemsInCart }}</span>
+		</div>
 		<font-awesome-icon
 			:icon="['fas', 'bars']"
 			size="lg" />
 	</nav>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
 .logo {
 	height: 32px;
 }
@@ -62,5 +66,21 @@ a {
 	font-family: sans-serif;
 	font-weight: 600;
 	font-size: 14px;
+}
+
+.items-in-cart {
+	position: absolute;
+	top: 15%;
+	left: 75%;
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	font-size: 0.75rem;
+	background-color: $background-blue;
+	border-radius: 50%;
 }
 </style>

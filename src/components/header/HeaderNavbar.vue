@@ -1,19 +1,18 @@
 <script>
 import { navbarLinks } from '@/assets/data';
 
+import AppLogo from '../AppLogo.vue';
 export default {
 	data() {
 		return { navbarLinks };
 	},
+	components: { AppLogo },
 };
 </script>
 
 <template>
 	<nav>
-		<img
-			class="logo"
-			src="@/assets/img/logo-light.png"
-			alt="logo" />
+		<AppLogo />
 		<ul>
 			<li v-for="link in navbarLinks">
 				<a href="#">{{ link }}</a>

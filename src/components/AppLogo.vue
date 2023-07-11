@@ -9,4 +9,8 @@ export default {};
 		alt="logo" />
 </template>
 
-<style scoped></style>
+<style scoped>
+.logo {
+	cursor: pointer;
+}
+</style>

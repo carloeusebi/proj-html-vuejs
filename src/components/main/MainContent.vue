@@ -15,15 +15,17 @@ export default {
 </script>
 
 <template>
-	<div class="boxes container">
-		<MainContentBoxes
-			v-for="(box, i) in boxes.labels"
-			:label="box"
-			:img="`${boxes.baseUrl}${i + 1}.png`" />
-	</div>
-	<MainContentTutoring />
-	<MainContentPotential />
-	<MainContentQuotes />
+	<section id="main-content">
+		<div class="boxes container">
+			<MainContentBoxes
+				v-for="(box, i) in boxes.labels"
+				:label="box"
+				:img="`${boxes.baseUrl}${i + 1}.png`" />
+		</div>
+		<MainContentTutoring />
+		<MainContentPotential />
+		<MainContentQuotes />
+	</section>
 </template>
 
 <style lang="scss" scoped>
@@ -31,7 +33,12 @@ export default {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 1.5rem;
-	margin-top: 7rem;
+	padding-top: 7rem;
+	background-color: white;
 	margin-bottom: 7rem;
+}
+
+#main-content {
+	background-color: white;
 }
 </style>

@@ -75,7 +75,9 @@ export default {
 @use '@/assets/sass' as *;
 
 section {
-	margin: 8rem 0;
+	padding: 8rem 0;
+	background-color: white;
+	border-bottom: 1px solid #eee;
 }
 .grid {
 	display: grid;

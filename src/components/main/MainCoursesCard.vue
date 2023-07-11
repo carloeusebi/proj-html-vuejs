@@ -26,15 +26,23 @@ export default {
 	<a
 		href="#"
 		class="course-card">
-		<img
-			class="mb-3"
-			:src="imgSrc"
-			:alt="title" />
+		<figure>
+			<img
+				:src="imgSrc"
+				:alt="title" />
+		</figure>
+		<font-awesome-icon
+			class="heart-hover"
+			:icon="['far', 'heart']" />
 		<div class="course-card-body">
 			<div class="d-flex justify-content-between mb-3">
 				<div>
-					<h5>{{ title }}</h5>
-					<div class="author">{{ author }}</div>
+					<a href="#">
+						<h5>{{ title }}</h5>
+					</a>
+					<a href="#">
+						<div class="author">{{ author }}</div>
+					</a>
 				</div>
 				<div>
 					<div :class="`pill ${pillColor}`">
@@ -51,7 +59,9 @@ export default {
 				<font-awesome-icon
 					:icon="['fas', 'tag']"
 					flip="horizontal" />
-				<span class="text-uppercase fw-bold ms-2">{{ type }}</span>
+				<a href="#">
+					<span class="card-type">{{ type }}</span>
+				</a>
 			</div>
 		</div>
 	</a>
@@ -61,20 +71,31 @@ export default {
 @use '@/assets/sass/index' as *;
 @use '@/assets/sass/colors' as *;
 
+$text-hover-gray: #444;
+
 .course-card {
 	display: block;
+	position: relative;
 	background-color: white;
 	border: 1px solid #eee;
-	color: $text-light-gray;
 	height: 100%;
+
+	transition: transform 300ms;
 }
 
 .course-card-body {
 	padding: 1.5rem;
 }
 
+figure {
+	position: relative;
+}
+
 img {
 	height: 240px;
+	width: 100%;
+	object-fit: fill;
+	position: relative;
 }
 
 h5 {
@@ -82,10 +103,22 @@ h5 {
 	font-family: $font-primary;
 	color: black;
 	font-weight: 700;
+	transition: color 200ms;
+
+	&:hover {
+		color: $background-blue;
+	}
 }
 
 .author {
 	font-weight: 700;
+	color: $text-light-gray;
+
+	transition: color 200ms;
+
+	&:hover {
+		color: $text-hover-gray;
+	}
 }
 
 p {
@@ -110,6 +143,50 @@ p {
 }
 
 .tags {
+	color: $text-light-gray;
 	font-size: 0.85rem;
+}
+
+.card-type {
+	text-transform: uppercase;
+	margin-left: 0.2rem;
+	font-weight: 900;
+
+	&:hover {
+		color: $text-hover-gray;
+	}
+}
+
+// animations on hover
+
+.heart-hover {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	color: white;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+figure::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: rgba(7, 7, 7, 0.1);
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.course-card:hover {
+	transform: translateY(-3px);
+	box-shadow: -2px 4px 13px 0 rgba(81, 137, 162, 0.05);
+
+	figure::after {
+		opacity: 1;
+	}
+
+	.heart-hover {
+		opacity: 1;
+	}
 }
 </style>

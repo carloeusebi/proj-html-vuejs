@@ -5,7 +5,20 @@ import MainCoursesCard from './MainCoursesCard.vue';
 import AppOwlDots from '../AppOwlDots.vue';
 export default {
 	data() {
-		return { courses, active: 0 };
+		return { courses, active: 0, timer: null };
+	},
+	methods: {
+		changeSelection(selected) {
+			const offset = -100 * selected * 3;
+			this.$refs.cards.forEach(c => {
+				c.style.transform = `translateX(${offset}%)`;
+			});
+		},
+	},
+	watch: {
+		active(newValue) {
+			this.changeSelection(newValue);
+		},
 	},
 	components: { MainCoursesCard, AppOwlDots },
 };
@@ -20,9 +33,13 @@ export default {
 				unde nemo facilis temporibus quae, officia ullam magni repudiandae minus ea ratione sapiente eaque alias.
 			</p>
 			<div class="cards-container">
-				<MainCoursesCard
+				<div
 					v-for="course in courses"
-					v-bind="course" />
+					:key="course.title"
+					class="card-container"
+					ref="cards">
+					<MainCoursesCard v-bind="course" />
+				</div>
 			</div>
 		</div>
 		<AppOwlDots
@@ -46,10 +63,11 @@ p {
 	flex-wrap: nowrap;
 	margin-bottom: 5rem;
 	overflow-x: hidden;
-	column-gap: 2rem;
 
-	.course-card {
-		flex: 0 0 calc((100% - 4rem) / 3);
+	.card-container {
+		flex: 0 0 calc(100% / 3);
+		padding: 0 2rem;
+		transition: transform 1200ms ease-in-out;
 	}
 }
 

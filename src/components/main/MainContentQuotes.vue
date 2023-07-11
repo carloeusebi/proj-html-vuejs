@@ -19,7 +19,6 @@ export default {
 		 */
 		changeSelection(selected) {
 			const offset = -100 * selected;
-			this.active = selected;
 			this.$refs.quote.forEach(q => {
 				q.style.transform = `translateX(${offset}%)`;
 			});

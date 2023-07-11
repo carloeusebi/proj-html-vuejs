@@ -66,10 +66,15 @@ export default {
 	background-color: white;
 	border: 1px solid #eee;
 	color: $text-light-gray;
+	height: 100%;
 }
 
 .course-card-body {
 	padding: 1.5rem;
+}
+
+img {
+	height: 240px;
 }
 
 h5 {

@@ -14,8 +14,9 @@ import {
 	faCheck,
 	faUser,
 	faTag,
+	faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBagShopping, faMagnifyingGlass, faBars, faAngleLeft, faAngleRight, faCheck, faUser, faTag);
+library.add(faBagShopping, faMagnifyingGlass, faBars, faAngleLeft, faAngleRight, faCheck, faUser, faTag, faHeart);
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');

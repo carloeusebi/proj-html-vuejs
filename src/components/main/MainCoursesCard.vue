@@ -143,14 +143,15 @@ p {
 }
 
 .tags {
-	color: $text-light-gray;
 	font-size: 0.85rem;
+	color: $text-light-gray;
 }
 
 .card-type {
 	text-transform: uppercase;
 	margin-left: 0.2rem;
 	font-weight: 900;
+	color: $text-light-gray;
 
 	&:hover {
 		color: $text-hover-gray;

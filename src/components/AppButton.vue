@@ -34,6 +34,13 @@ a {
 	padding: 1rem 3rem;
 	font-weight: bold;
 	text-transform: uppercase;
+	transition: all 300ms;
+
+	&:hover {
+		background-color: #2face6;
+		border-color: #2face6;
+		color: white;
+	}
 }
 
 .primary {
@@ -43,7 +50,7 @@ a {
 
 .secondary {
 	background-color: white;
-	border: 2px solid gray;
+	border: 2px solid #eee;
 	color: rgb(128, 128, 128);
 }
 </style>

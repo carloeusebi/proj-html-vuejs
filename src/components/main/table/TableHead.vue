@@ -23,4 +23,14 @@ export default {
 	</th>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
+
+table th {
+	background-color: $background-box;
+}
+h5 {
+	font-size: 1.5rem;
+	padding: 1.5rem;
+}
+</style>

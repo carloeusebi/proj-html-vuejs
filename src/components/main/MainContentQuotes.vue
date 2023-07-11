@@ -19,6 +19,7 @@ export default {
 		 */
 		changeSelection(selected) {
 			const offset = -100 * selected;
+			this.active = selected;
 			this.$refs.quote.forEach(q => {
 				q.style.transform = `translateX(${offset}%)`;
 			});
@@ -29,7 +30,7 @@ export default {
 		},
 		startTimeout() {
 			this.timer = setTimeout(() => {
-				const next = this.active === this.quotes.length - 1 ? 0 : ++this.active;
+				const next = this.active === this.quotes.length - 1 ? 0 : this.active + 1;
 				this.changeSelection(next);
 			}, 7500);
 		},

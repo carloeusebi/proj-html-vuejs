@@ -28,6 +28,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
+
 .owl-dots {
 	display: flex;
 	justify-content: center;
@@ -41,6 +43,13 @@ export default {
 	background-color: rgba(255, 255, 255, 0.4);
 
 	cursor: pointer;
+}
+.dot.blue {
+	background-color: $background-light-blue;
+
+	&.active {
+		background-color: $background-blue;
+	}
 }
 
 .active {

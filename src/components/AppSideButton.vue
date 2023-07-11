@@ -47,6 +47,9 @@ export default {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	font-size: 10px;
+	font-weight: 500;
+	font-family: 'Heebo Variable';
 
 	box-shadow: 0 0 9.8px 0.2px rgba(0, 0, 0, 0.1);
 

@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import '@fontsource/merriweather';
+import '@fontsource-variable/heebo';
+import '@fontsource-variable/open-sans';
 import '@/assets/sass/index.scss';
 import * as bootstrap from 'bootstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';

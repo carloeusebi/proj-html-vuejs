@@ -9,6 +9,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@fontsource-variable/heebo": "^5.0.5",
+		"@fontsource-variable/open-sans": "^5.0.6",
 		"@fontsource/merriweather": "^5.0.5",
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",

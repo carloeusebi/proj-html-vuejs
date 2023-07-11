@@ -20,17 +20,19 @@ export default {
 				<li
 					v-for="partner in partners"
 					:key="partner.title">
-					<img
-						class="original"
-						:src="imgSrc(partner.img)"
-						:alt="partner.title"
-						:title="partner.title" />
+					<a :href="partner.website">
+						<img
+							class="original"
+							:src="imgSrc(partner.img)"
+							:alt="partner.title"
+							:title="partner.title" />
 
-					<img
-						class="on-hover"
-						:src="imgSrc(partner.hover)"
-						:alt="partner.title"
-						:title="partner.title" />
+						<img
+							class="on-hover"
+							:src="imgSrc(partner.hover)"
+							:alt="partner.title"
+							:title="partner.title" />
+					</a>
 				</li>
 			</ul>
 		</div>

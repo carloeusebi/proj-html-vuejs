@@ -77,7 +77,7 @@ $text-hover-gray: #444;
 	display: block;
 	position: relative;
 	background-color: white;
-	border: 1px solid #eee;
+	border: 1px solid $border-gray;
 	height: 100%;
 
 	transition: transform 300ms;

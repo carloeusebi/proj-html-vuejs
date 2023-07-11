@@ -18,9 +18,11 @@ export default {};
 	</section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use '@/assets/sass/colors' as *;
+
 #tutoring {
-	border-bottom: 2px solid #eee;
+	border-bottom: 2px solid $border-gray;
 }
 .blue-text {
 	text-transform: uppercase;

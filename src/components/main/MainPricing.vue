@@ -95,7 +95,7 @@ table {
 
 th,
 td {
-	border: 1px solid #eee;
+	border: 1px solid $border-gray;
 	background-color: white;
 	color: #555;
 	font-size: 1.2rem;

@@ -77,7 +77,7 @@ export default {
 section {
 	padding: 8rem 0;
 	background-color: white;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid $border-gray;
 }
 .grid {
 	display: grid;
@@ -104,7 +104,7 @@ figure {
 	font-family: $font-primary;
 	font-weight: 600;
 	padding: 1.5rem;
-	border: 1px solid #eee;
+	border: 1px solid $border-gray;
 	user-select: none;
 	cursor: pointer;
 	transition: all 250ms ease-out;

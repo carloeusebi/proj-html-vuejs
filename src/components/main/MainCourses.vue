@@ -50,9 +50,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/sass/colors' as *;
+
 section {
 	padding: 8rem 0;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid $border-gray;
 }
 
 .cards-container {

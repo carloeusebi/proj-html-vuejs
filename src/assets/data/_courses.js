@@ -16,7 +16,7 @@ export const courses = [
 		type: 'Programming',
 	},
 	{
-		img: 'course-2-f-img.jpg',
+		img: 'course-3-f-img.jpg',
 		title: 'Learn Spanish',
 		pricing: 20,
 		author: 'Jennie King',
@@ -64,7 +64,7 @@ export const courses = [
 		type: 'Languages',
 	},
 	{
-		img: 'course-2-f-img.jpg.jpg',
+		img: 'course-7-f-img.jpg',
 		title: 'Modern Psychology',
 		pricing: 40,
 		author: 'Kathryn Webb',

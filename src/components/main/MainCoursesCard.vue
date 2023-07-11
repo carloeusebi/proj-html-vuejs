@@ -63,7 +63,6 @@ export default {
 
 .course-card {
 	display: block;
-	max-width: 33%;
 	background-color: white;
 	border: 1px solid #eee;
 	color: $text-light-gray;

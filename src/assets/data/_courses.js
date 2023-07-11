@@ -4,8 +4,7 @@ export const courses = [
 		title: 'Business English',
 		pricing: 20,
 		author: 'Preston Marshall',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Languages',
 	},
 	{
@@ -13,8 +12,7 @@ export const courses = [
 		title: 'Social Computing',
 		pricing: 0,
 		author: 'David Sanders',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Programming',
 	},
 	{
@@ -22,8 +20,7 @@ export const courses = [
 		title: 'Learn Spanish',
 		pricing: 20,
 		author: 'Jennie King',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Languages',
 	},
 	{
@@ -31,8 +28,7 @@ export const courses = [
 		title: 'Android Developer',
 		pricing: 0,
 		author: 'David Sanders',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Programming',
 	},
 	{
@@ -40,8 +36,7 @@ export const courses = [
 		title: 'Web Designer',
 		pricing: 0,
 		author: 'Jennifer Powell',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Programming',
 	},
 	{
@@ -49,8 +44,7 @@ export const courses = [
 		title: 'Financial Modeling',
 		pricing: 0,
 		author: 'Edward Bowman',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Business',
 	},
 	{
@@ -58,8 +52,7 @@ export const courses = [
 		title: 'Basic Marketing',
 		pricing: 0,
 		author: 'Edward Bowman',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Business',
 	},
 	{
@@ -67,8 +60,7 @@ export const courses = [
 		title: 'Academic English',
 		pricing: 0,
 		author: 'Dave Robbins',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Languages',
 	},
 	{
@@ -76,8 +68,7 @@ export const courses = [
 		title: 'Modern Psychology',
 		pricing: 40,
 		author: 'Kathryn Webb',
-		description:
-			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore. Esse non, quibusdam iusto perferendis rem nam quae sint itaque architecto praesentium. Possimus cupiditate fuga maiores maxime.',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat amet exercitationem ullam dolore.',
 		type: 'Business',
 	},
 ];

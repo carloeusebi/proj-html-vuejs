@@ -83,6 +83,7 @@ export default {
 
 section {
 	padding: 8rem;
+	border-bottom: 1px solid $border-gray;
 }
 
 p {

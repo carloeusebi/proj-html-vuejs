@@ -10,7 +10,11 @@ export default {};
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem iusto aspernatur dolores nobis nihil eius qui
 				hic. Doloremque dolorem, et dolore quaerat asperiores a corrupti! Repellendus expedita culpa quisquam voluptate.
 			</p>
-			<p class="blue-text">Learn more</p>
+			<a
+				href="#"
+				class="blue-text"
+				>Learn more</a
+			>
 			<img
 				src="@/assets/img/h5-img-1.jpg"
 				alt="Home Tutoring" />

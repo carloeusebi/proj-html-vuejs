@@ -79,11 +79,12 @@ export default {
 
 <style lang="scss" scoped>
 @use '@/assets/sass/index' as *;
+@use '@/assets/sass/vars' as *;
 @use '@/assets/sass/colors' as *;
 
 section {
-	padding: 8rem;
-	border-bottom: 1px solid $border-gray;
+	padding-bottom: $section-padding;
+	border-bottom: $section-border;
 }
 
 p {

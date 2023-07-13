@@ -67,6 +67,11 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/sass/index' as *;
 @use '@/assets/sass/colors' as *;
+@use '@/assets/sass/mixins' as *;
+
+.grid-container {
+	@include grid(repeat(4, 25%));
+}
 
 p {
 	font-size: 1rem;
@@ -147,11 +152,6 @@ ul {
 			color: $background-blue;
 		}
 	}
-}
-
-.grid-container {
-	display: grid;
-	grid-template-columns: repeat(4, 25%);
 }
 
 .col {

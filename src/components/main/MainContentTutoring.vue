@@ -24,10 +24,12 @@ export default {};
 
 <style scoped lang="scss">
 @use '@/assets/sass/colors' as *;
+@use '@/assets/sass/vars' as *;
 
 #tutoring {
-	border-bottom: 2px solid $border-gray;
+	border-bottom: $section-border;
 }
+
 .blue-text {
 	text-transform: uppercase;
 	font-weight: 900;

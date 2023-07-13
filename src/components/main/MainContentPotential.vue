@@ -35,17 +35,13 @@ export default {};
 
 <style lang="scss" scoped>
 @use '@/assets/sass/index' as *;
-
-#potential {
-	margin-top: 8rem;
-}
+@use '@/assets/sass/mixins' as *;
 
 img {
 	padding: 0 2rem;
 }
 .grid {
-	display: grid;
-	grid-template-columns: 60% 40%;
+	@include grid(60% 40%);
 }
 
 .number,

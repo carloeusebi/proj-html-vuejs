@@ -72,17 +72,17 @@ export default {
 
 <style lang="scss" scoped>
 @use '@/assets/sass/colors' as *;
+@use '@/assets/sass/vars' as *;
+@use '@/assets/sass/mixins' as *;
 @use '@/assets/sass' as *;
 
 section {
-	padding: 8rem 0;
+	padding-bottom: $section-padding;
 	background-color: white;
-	border-bottom: 1px solid $border-gray;
+	border-bottom: $section-border;
 }
 .grid {
-	display: grid;
-	grid-template-columns: 30% 70%;
-	gap: 2rem;
+	@include grid(30% 70%, 2rem);
 }
 
 * {

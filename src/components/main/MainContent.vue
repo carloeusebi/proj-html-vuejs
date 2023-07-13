@@ -29,13 +29,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/sass/mixins' as *;
 .boxes.container {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	gap: 1.5rem;
-	padding-top: 7rem;
+	@include grid(repeat(6, 1fr), 1.5rem);
 	background-color: white;
-	margin-bottom: 7rem;
 }
 
 #main-content {

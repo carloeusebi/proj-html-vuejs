@@ -40,8 +40,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/sass/vars' as *;
+
 section {
-	padding: 8rem 0;
+	padding-bottom: $section-padding;
 	background-color: white;
 }
 

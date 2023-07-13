@@ -51,10 +51,11 @@ export default {
 
 <style lang="scss" scoped>
 @use '@/assets/sass/colors' as *;
+@use '@/assets/sass/vars' as *;
 
 section {
-	padding: 8rem 0;
-	border-bottom: 1px solid $border-gray;
+	padding-bottom: $section-padding;
+	border-bottom: $section-border;
 }
 
 .cards-container {

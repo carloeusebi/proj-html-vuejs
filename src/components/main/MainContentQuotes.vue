@@ -79,6 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '@/assets/sass' as *;
+@use '@/assets/sass/vars' as *;
 
 .container {
 	display: flex;
@@ -88,8 +89,8 @@ export default {
 #quotes {
 	background-image: url('@/assets/img/h5-parallax-img-1.png');
 	text-align: center;
-	padding: 7rem 0;
 	color: white;
+	padding-bottom: $section-padding;
 }
 
 img {

@@ -1,5 +1,5 @@
 @use './colors' as *;
-// Import all of Bootstrap's CSS
+@use './vars' as *;
 @import 'bootstrap/scss/bootstrap';
 
 $font-primary: 'Merriweather';
@@ -47,4 +47,8 @@ p {
 
 .blue-text {
 	color: $background-blue;
+}
+
+section {
+	padding-top: $section-padding;
 }
